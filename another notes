@@ -1,0 +1,14 @@
+## 2NF
+```mysql
+
+在满足第一范式的前提下，其他列都需要完全依赖主键列。如果出现不完全依赖，只可能是联合主键。
+
+-- 订单表
+create table myorder (
+product_id int,
+customer_id int,
+product_name varchar(20),
+customer_name varchar(20),
+primary key (product_id, customer_id));   @此表出现不完全依赖
+
+
